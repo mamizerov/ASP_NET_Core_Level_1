@@ -1,0 +1,23 @@
+﻿@model IEnumerable<HomeTask_1.Models.StudentView>
+@{
+    ViewData["Title"] = "Информация о студентах МГУ";
+}
+
+    <table>
+        <td>Имя студента</td>
+        <td>Фамилия студента</td>
+        <td>Курс</td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.SurName</td>
+                <td>@item.Course</td>
+                <td>@*<a asp-action="Details" asp-route-id="@item.Id">Детали</a>*@</td>
+                <td>
+                    @Html.ActionLink("Детали", "Details", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+
