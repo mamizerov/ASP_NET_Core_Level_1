@@ -1,0 +1,36 @@
+﻿@model StudentView
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container">
+    @Html.ActionLink("Назад к списку", "Index")
+
+    <table class="table table-bordered">
+        <tr>
+            <td>Id</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td>Имя</td>
+            <td>@Model.FirstName</td>
+        </tr>
+        <tr>
+            <td>Фамилия</td>
+            <td>@Model.SurName</td>
+        </tr>
+        <tr>
+            <td>Возраст</td>
+            <td>@Model.Age</td>
+        </tr>
+        <tr>
+            <td>Телефон</td>
+            <td>@Model.Telefon</td>
+        </tr>
+        <tr>
+            <td>Курс</td>
+            <td>@Model.Course</td>
+        </tr>
+    </table>
+</div>
+
