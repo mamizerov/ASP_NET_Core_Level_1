@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Al_Web_Store.Infrastructure.Implementations;
+using Al_Web_Store.Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,6 +27,11 @@ namespace HomeTask_1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            // Добавляем разрешение зависимости
+            services.AddSingleton<IStudentService, InMemoryStudentService>();
+            //services.AddTransient<IStudentService, InMemoryStudentService>();
+            //services.AddScoped<IStudentService, InMemoryStudentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
